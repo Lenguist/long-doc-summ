@@ -6,7 +6,7 @@ commands to run to get summaries:
 
 used to collect an exhaustive set of summaries from that source.
 
-cd booksum-main/scripts/data_collection/cliffnotes/
+cd booksum-main/scripts/data_collection/shmoop/
 python get_summaries.py
 
 cd ..
@@ -17,6 +17,7 @@ cd ..
 cd gradesaver
 python get_summaries.py
 
+NOW HERE
 cd..
 cd novelguide
 python get_summaries.py
@@ -25,6 +26,7 @@ cd ..
 cd pinkmonkey
 python get_summaries.py
 
+NOW HERE
 cd..
 cd shmoop
 python get_summaries.py
