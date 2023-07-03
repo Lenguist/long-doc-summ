@@ -26,16 +26,27 @@ cd ..
 cd pinkmonkey
 python get_summaries.py
 
-NOW HERE
+NOT DONE
 cd..
 cd shmoop
 python get_summaries.py
 
-cd..
+NOT DONE
+cd ..
 cd sparknotes
 python get_summaries.py
 
 cd ..
 cd thebestnotes
-cd python get_summaries.py
+python get_summaries.py
 
+
+python gather_data.py --matched_file chapter_summary_aligned_train_split.jsonl --split_paragraphs
+python gather_data.py --matched_file chapter_summary_aligned_valid_split.jsonl --split_paragraphs
+python gather_data.py --matched_file chapter_summary_aligned_test_split.jsonl --split_paragraphs
+
+python gather_data.py --matched_file ../chapter-level-summary-alignments/chapter_summary_aligned_train_split.jsonl --split_paragraphs
+python gather_data.py --matched_file ../chapter-level-summary-alignments/chapter_summary_aligned_test_split.jsonl --split_paragraphs
+python gather_data.py --matched_file ../chapter-level-summary-alignments/chapter_summary_aligned_val_split.jsonl --split_paragraphs
+
+cd ../../all_chapterized_books/27681-chapters
