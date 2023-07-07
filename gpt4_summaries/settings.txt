@@ -1,0 +1,6 @@
+{
+  "dir": "sample2",
+  "outdir": "gpt4_summaries",
+  "temperature": 0.5,
+  "model": "gpt-4"
+}
