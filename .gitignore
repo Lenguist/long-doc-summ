@@ -3,3 +3,5 @@
 .DS_Store
 all_chapterized_books/
 booksum-main/
+oa_secrets.py
+summscreen/
