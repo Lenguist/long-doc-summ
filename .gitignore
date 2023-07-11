@@ -4,3 +4,5 @@
 all_chapterized_books/
 booksum-main/
 data/
+oa_secrets.py
+summscreen/
