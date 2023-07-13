@@ -50,3 +50,5 @@ python gather_data.py --matched_file ../chapter-level-summary-alignments/chapter
 python gather_data.py --matched_file ../chapter-level-summary-alignments/chapter_summary_aligned_val_split.jsonl --split_paragraphs
 
 cd ../../all_chapterized_books/27681-chapters
+
+python3 snac_evaluate.py --validation_file sample.tsv --model_name_or_path  /Users/mbondarenko/Desktop/long-doc-summ/snac-main/t5-span   --output_dir /Users/mbondarenko/Desktop/long-doc-summ/snac-main
