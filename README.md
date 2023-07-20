@@ -6,7 +6,7 @@ Tasks:
 - Prepare data
   - Booksum ✅
   - SummScreen in progress
-  - Real books! in progress
+  - Real books! coming in future
 - Eval
   - Automated
     - BERTScore ✅
@@ -19,4 +19,4 @@ Tasks:
       - work on running it on compute cluster
       - swap out default question generator for gpt
   - Coverage
-    - 
+- Summary generation
