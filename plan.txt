@@ -3,3 +3,4 @@
 3. try scp simple code like hello.py
 4. try scp snac and run it on sample.tsv
 5. try the same for qafacteval
+hello
