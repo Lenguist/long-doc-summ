@@ -1,7 +1,6 @@
-print("Hello World!")
-print("fuck yeah")
+import torch
 
-scp -r my_project john@192.0.2.0:/home/john/
-
-
-
+if torch.cuda.is_available():
+    print("PyTorch can use GPUs!")
+else:
+    print("PyTorch cannot use GPUs.")
