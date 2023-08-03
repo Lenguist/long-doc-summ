@@ -6,7 +6,8 @@ booksum-main/
 data/
 oa_secrets.py
 summscreen/
-snac-main/
+snac-main/t5-span
+snac-main/t5-nospan
 QAFactEval/
 SummScreen_raw/
 .vs-code/
