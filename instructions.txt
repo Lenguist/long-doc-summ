@@ -17,7 +17,7 @@ To run snac_evaluate:
 preprocess using snac-preprocess.ipynb to get a .tsv file
 decide to preprocess sentence-wise or in multi-sentence pieces 
 then ran snac_evauate
-python3 snac_evaluate.py --validation_file sample.tsv --model_name_or_path  t5-span   --output_dir test-outputs-snac
+python3 snac_evaluate.py --validation_file output.tsv --model_name_or_path  t5-span   --output_dir test-outputs-snac
 then visualize the output with html tags like in the paper
 
 for qafacteval
