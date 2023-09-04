@@ -8,7 +8,9 @@ oa_secrets.py
 summscreen/
 snac-main/t5-span
 snac-main/t5-nospan
+snac-main/snac-env
 QAFactEval/
 SummScreen_raw/
 .vs-code/
 qafacteval_env/
+myenv/
