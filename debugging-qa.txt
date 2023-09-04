@@ -1,0 +1,407 @@
+mb5018@tuna:~/long-doc-summ$ python3 -m venv qafacteval_env
+nv/bin/activateThe virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.8-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+Failing command: ['/home/mb5018/long-doc-summ/qafacteval_env/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']
+
+mb5018@tuna:~/long-doc-summ$ s
+mb5018@tuna:~/long-doc-summ$ pip install --user virtualenv
+Requirement already satisfied: virtualenv in /usr/lib/python3/dist-packages (20.0.17)
+mb5018@tuna:~/long-doc-summ$ echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+mb5018@tuna:~/long-doc-summ$ source ~/.bashrc
+mb5018@tuna:~/long-doc-summ$ virtualenv qafacteval_env
+
+created virtual environment CPython3.8.10.final.0-64 in 916ms
+  creator CPython3Posix(dest=/home/mb5018/long-doc-summ/qafacteval_env, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, pkg_resources=latest, via=copy, app_data_dir=/home/mb5018/.local/share/virtualenv/seed-app-data/v1.0.1.debian.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+mb5018@tuna:~/long-doc-summ$ 
+mb5018@tuna:~/long-doc-summ$ virtualenv qafacteval_env
+
+created virtual environment CPython3.8.10.final.0-64 in 1018ms
+  creator CPython3Posix(dest=/home/mb5018/long-doc-summ/qafacteval_env, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, pkg_resources=latest, via=copy, app_data_dir=/home/mb5018/.local/share/virtualenv/seed-app-data/v1.0.1.debian.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+mb5018@tuna:~/long-doc-summ$ 
+mb5018@tuna:~/long-doc-summ$ source qafacteval_env/bin/activate
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ pip show qafacteval
+WARNING: Package(s) not found: qafacteval
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ pip3 install qafacteval
+Collecting qafacteval
+  Using cached qafacteval-0.10-py3-none-any.whl (3.3 kB)
+Collecting qaeval
+  Using cached qaeval-0.1.0-py3-none-any.whl (42 kB)
+Collecting allennlp==1.1.0
+  Using cached allennlp-1.1.0-py3-none-any.whl (485 kB)
+Collecting edlib
+  Using cached edlib-1.3.9-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (359 kB)
+Collecting spacy==2.2.4
+  Using cached spacy-2.2.4-cp38-cp38-manylinux1_x86_64.whl (10.6 MB)
+Collecting urllib3>=1.25.10
+  Using cached urllib3-2.0.4-py3-none-any.whl (123 kB)
+Collecting torch==1.6.0
+  Using cached torch-1.6.0-cp38-cp38-manylinux1_x86_64.whl (748.8 MB)
+Collecting click==7.1.2
+  Using cached click-7.1.2-py2.py3-none-any.whl (82 kB)
+Collecting transformers==3.0.2
+  Using cached transformers-3.0.2-py3-none-any.whl (769 kB)
+Collecting boto3<2.0,>=1.14
+  Using cached boto3-1.28.35-py3-none-any.whl (135 kB)
+Processing /home/mb5018/.cache/pip/wheels/42/9b/3d/e95f85de3c2757cc5fd0791c0d18695a429e0f5745e0149802/jsonnet-0.20.0-cp38-cp38-linux_x86_64.whl
+Collecting jsonpickle
+  Using cached jsonpickle-3.0.2-py3-none-any.whl (40 kB)
+Collecting requests>=2.18
+  Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Collecting h5py
+  Using cached h5py-3.9.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.8 MB)
+Collecting nltk
+  Using cached nltk-3.8.1-py3-none-any.whl (1.5 MB)
+Collecting tqdm>=4.19
+  Using cached tqdm-4.66.1-py3-none-any.whl (78 kB)
+Collecting scikit-learn
+  Using cached scikit_learn-1.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.1 MB)
+Collecting numpy
+  Using cached numpy-1.24.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+Collecting scipy
+  Using cached scipy-1.10.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.5 MB)
+Collecting pytest
+  Using cached pytest-7.4.0-py3-none-any.whl (323 kB)
+Collecting filelock<3.1,>=3.0
+  Using cached filelock-3.0.12-py3-none-any.whl (7.6 kB)
+Processing /home/mb5018/.cache/pip/wheels/6a/4f/72/28857f75625b263e2e3f5ab2fc4416c0a85960ac6485007eaa/overrides-3.1.0-py3-none-any.whl
+Collecting tensorboardX>=1.2
+  Using cached tensorboardX-2.6.2.2-py2.py3-none-any.whl (101 kB)
+Collecting cymem<2.1.0,>=2.0.2
+  Using cached cymem-2.0.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (36 kB)
+Collecting blis<0.5.0,>=0.4.0
+  Using cached blis-0.4.1-cp38-cp38-manylinux1_x86_64.whl (3.7 MB)
+Collecting thinc==7.4.0
+  Using cached thinc-7.4.0-cp38-cp38-manylinux1_x86_64.whl (2.2 MB)
+Collecting preshed<3.1.0,>=3.0.2
+  Using cached preshed-3.0.8-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+Collecting plac<1.2.0,>=0.9.6
+  Using cached plac-1.1.3-py2.py3-none-any.whl (20 kB)
+Collecting murmurhash<1.1.0,>=0.28.0
+  Using cached murmurhash-1.0.9-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (21 kB)
+Collecting wasabi<1.1.0,>=0.4.0
+  Using cached wasabi-0.10.1-py3-none-any.whl (26 kB)
+Collecting srsly<1.1.0,>=1.0.2
+  Using cached srsly-1.0.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (370 kB)
+Requirement already satisfied: setuptools in ./qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (44.0.0)
+Collecting catalogue<1.1.0,>=0.0.7
+  Using cached catalogue-1.0.2-py2.py3-none-any.whl (16 kB)
+Processing /home/mb5018/.cache/pip/wheels/a0/0b/ee/e6994fadb42c1354dcccb139b0bf2795271bddfe6253ccdf11/future-0.18.3-py3-none-any.whl
+Processing /home/mb5018/.cache/pip/wheels/82/ab/9b/c15899bf659ba74f623ac776e861cf2eb8608c1825ddec66a4/sacremoses-0.0.53-py3-none-any.whl
+Collecting sentencepiece!=0.1.92
+  Using cached sentencepiece-0.1.99-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+Collecting packaging
+  Using cached packaging-23.1-py3-none-any.whl (48 kB)
+Collecting regex!=2019.12.17
+  Using cached regex-2023.8.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (774 kB)
+Collecting tokenizers==0.8.1.rc1
+  Using cached tokenizers-0.8.1rc1-cp38-cp38-manylinux1_x86_64.whl (3.0 MB)
+Collecting botocore<1.32.0,>=1.31.35
+  Using cached botocore-1.31.35-py3-none-any.whl (11.1 MB)
+Collecting jmespath<2.0.0,>=0.7.1
+  Using cached jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.7.0,>=0.6.0
+  Using cached s3transfer-0.6.2-py3-none-any.whl (79 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.4-py3-none-any.whl (61 kB)
+Collecting certifi>=2017.4.17
+  Using cached certifi-2023.7.22-py3-none-any.whl (158 kB)
+Collecting charset-normalizer<4,>=2
+  Using cached charset_normalizer-3.2.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (199 kB)
+Collecting joblib
+  Using cached joblib-1.3.2-py3-none-any.whl (302 kB)
+Collecting threadpoolctl>=2.0.0
+  Using cached threadpoolctl-3.2.0-py3-none-any.whl (15 kB)
+Collecting iniconfig
+  Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Collecting tomli>=1.0.0; python_version < "3.11"
+  Using cached tomli-2.0.1-py3-none-any.whl (12 kB)
+Collecting pluggy<2.0,>=0.12
+  Using cached pluggy-1.3.0-py3-none-any.whl (18 kB)
+Collecting exceptiongroup>=1.0.0rc8; python_version < "3.11"
+  Using cached exceptiongroup-1.1.3-py3-none-any.whl (14 kB)
+Collecting protobuf>=3.20
+  Using cached protobuf-4.24.2-cp37-abi3-manylinux2014_x86_64.whl (311 kB)
+Collecting six
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting python-dateutil<3.0.0,>=2.1
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+ERROR: botocore 1.31.35 has requirement urllib3<1.27,>=1.25.4, but you'll have urllib3 2.0.4 which is incompatible.
+Installing collected packages: six, python-dateutil, urllib3, jmespath, botocore, s3transfer, boto3, jsonnet, regex, click, joblib, tqdm, sacremoses, sentencepiece, packaging, idna, certifi, charset-normalizer, requests, filelock, numpy, tokenizers, transformers, jsonpickle, cymem, blis, wasabi, murmurhash, preshed, plac, srsly, catalogue, thinc, spacy, h5py, nltk, scipy, threadpoolctl, scikit-learn, future, torch, iniconfig, tomli, pluggy, exceptiongroup, pytest, overrides, protobuf, tensorboardX, allennlp, edlib, qaeval, qafacteval
+Successfully installed allennlp-1.1.0 blis-0.4.1 boto3-1.28.35 botocore-1.31.35 catalogue-1.0.2 certifi-2023.7.22 charset-normalizer-3.2.0 click-7.1.2 cymem-2.0.7 edlib-1.3.9 exceptiongroup-1.1.3 filelock-3.0.12 future-0.18.3 h5py-3.9.0 idna-3.4 iniconfig-2.0.0 jmespath-1.0.1 joblib-1.3.2 jsonnet-0.20.0 jsonpickle-3.0.2 murmurhash-1.0.9 nltk-3.8.1 numpy-1.24.4 overrides-3.1.0 packaging-23.1 plac-1.1.3 pluggy-1.3.0 preshed-3.0.8 protobuf-4.24.2 pytest-7.4.0 python-dateutil-2.8.2 qaeval-0.1.0 qafacteval-0.10 regex-2023.8.8 requests-2.31.0 s3transfer-0.6.2 sacremoses-0.0.53 scikit-learn-1.3.0 scipy-1.10.1 sentencepiece-0.1.99 six-1.16.0 spacy-2.2.4 srsly-1.0.7 tensorboardX-2.6.2.2 thinc-7.4.0 threadpoolctl-3.2.0 tokenizers-0.8.1rc1 tomli-2.0.1 torch-1.6.0 tqdm-4.66.1 transformers-3.0.2 urllib3-2.0.4 wasabi-0.10.1
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ python
+Python 3.8.10 (default, May 26 2023, 14:05:08) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import qafacteval
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'qafacteval'
+>>> exit()
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ pip show qafacteval
+Name: qafacteval
+Version: 0.10
+Summary: QAFactEval Summarization Factual Consistency Metric
+Home-page: https://github.com/salesforce/QAFactEval
+Author: Alexander R. Fabbri
+Author-email: afabbri@salesforce.com
+License: BSD
+Location: /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages
+Requires: qaeval
+Required-by: 
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ cd /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ ls
+allennlp                              idna                                     plac_ext.py                      setuptools-44.0.0.virtualenv
+allennlp-1.1.0.dist-info              idna-3.4.dist-info                       plac.py                          six-1.16.0.dist-info
+bin                                   iniconfig                                plac_tk.py                       six.py
+blis                                  iniconfig-2.0.0.dist-info                pluggy                           sklearn
+blis-0.4.1.dist-info                  jmespath                                 pluggy-1.3.0.dist-info           spacy
+boto3                                 jmespath-1.0.1.dist-info                 preshed                          spacy-2.2.4.dist-info
+boto3-1.28.35.dist-info               joblib                                   preshed-3.0.8.dist-info          srsly
+botocore                              joblib-1.3.2.dist-info                   protobuf-4.24.2.dist-info        srsly-1.0.7.dist-info
+botocore-1.31.35.dist-info            jsonnet-0.20.0.dist-info                 __pycache__                      tensorboardX
+caffe2                                _jsonnet.cpython-38-x86_64-linux-gnu.so  py.py                            tensorboardX-2.6.2.2.dist-info
+catalogue                             jsonpickle                               _pytest                          thinc
+catalogue-1.0.2.dist-info             jsonpickle-3.0.2.dist-info               pytest                           thinc-7.4.0.dist-info
+certifi                               libfuturize                              pytest-7.4.0.dist-info           threadpoolctl-3.2.0.dist-info
+certifi-2023.7.22.dist-info           libpasteurize                            python_dateutil-2.8.2.dist-info  threadpoolctl.py
+charset_normalizer                    murmurhash                               qaeval                           tokenizers
+charset_normalizer-3.2.0.dist-info    murmurhash-1.0.9.dist-info               qaeval-0.1.0.dist-info           tokenizers-0.8.1rc1.dist-info
+click                                 nltk                                     qafacteval-0.10.dist-info        tomli
+click-7.1.2.dist-info                 nltk-3.8.1.dist-info                     regex                            tomli-2.0.1.dist-info
+cymem                                 numpy                                    regex-2023.8.8.dist-info         torch
+cymem-2.0.7.dist-info                 numpy-1.24.4.dist-info                   requests                         torch-1.6.0.dist-info
+dateutil                              numpy.libs                               requests-2.31.0.dist-info        tqdm
+easy_install.py                       overrides                                s3transfer                       tqdm-4.66.1.dist-info
+edlib-1.3.9.dist-info                 overrides-3.1.0.dist-info                s3transfer-0.6.2.dist-info       transformers
+edlib.cpython-38-x86_64-linux-gnu.so  packaging                                sacremoses                       transformers-3.0.2.dist-info
+exceptiongroup                        packaging-23.1.dist-info                 sacremoses-0.0.53.dist-info      urllib3
+exceptiongroup-1.1.3.dist-info        past                                     scikit_learn-1.3.0.dist-info     urllib3-2.0.4.dist-info
+filelock-3.0.12.dist-info             pip                                      scikit_learn.libs                _virtualenv.pth
+filelock.py                           pip-20.0.2.dist-info                     scipy                            _virtualenv.py
+future                                pip-20.0.2.virtualenv                    scipy-1.10.1.dist-info           wasabi
+future-0.18.3.dist-info               pkg_resources                            scipy.libs                       wasabi-0.10.1.dist-info
+google                                pkg_resources-0.0.0.dist-info            sentencepiece                    wheel
+h5py                                  pkg_resources-0.0.0.virtualenv           sentencepiece-0.1.99.dist-info   wheel-0.34.2.dist-info
+h5py-3.9.0.dist-info                  plac-1.1.3.dist-info                     setuptools                       wheel-0.34.2.virtualenv
+h5py.libs                             plac_core.py                             setuptools-44.0.0.dist-info
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ echo $PYTHONPATH
+
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ echo $PYTHONPATH
+
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ python
+Python 3.8.10 (default, May 26 2023, 14:05:08) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import qafacteval
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'qafacteval'
+>>> 
+KeyboardInterrupt
+>>> exit()
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ pip uninstall qafacteval
+
+Found existing installation: qafacteval 0.10
+Uninstalling qafacteval-0.10:
+  Would remove:
+    /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages/qafacteval-0.10.dist-info/*
+Proceed (y/n)? Your response ('') was not one of the expected responses: y, n
+Proceed (y/n)? y
+  Successfully uninstalled qafacteval-0.10
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ pip install qafacteval
+
+Collecting qafacteval
+  Using cached qafacteval-0.10-py3-none-any.whl (3.3 kB)
+Requirement already satisfied: qaeval in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qafacteval) (0.1.0)
+Requirement already satisfied: click==7.1.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (7.1.2)
+Requirement already satisfied: spacy==2.2.4 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (2.2.4)
+Requirement already satisfied: torch==1.6.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (1.6.0)
+Requirement already satisfied: urllib3>=1.25.10 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (2.0.4)
+Requirement already satisfied: transformers==3.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (3.0.2)
+Requirement already satisfied: allennlp==1.1.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (1.1.0)
+Requirement already satisfied: edlib in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval) (1.3.9)
+Requirement already satisfied: numpy>=1.15.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (1.24.4)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (3.0.8)
+Requirement already satisfied: wasabi<1.1.0,>=0.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (0.10.1)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (2.0.7)
+Requirement already satisfied: setuptools in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (44.0.0)
+Requirement already satisfied: requests<3.0.0,>=2.13.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (2.31.0)
+Requirement already satisfied: catalogue<1.1.0,>=0.0.7 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (1.0.2)
+Requirement already satisfied: blis<0.5.0,>=0.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (0.4.1)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (1.0.9)
+Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (4.66.1)
+Requirement already satisfied: plac<1.2.0,>=0.9.6 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (1.1.3)
+Requirement already satisfied: srsly<1.1.0,>=1.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (1.0.7)
+Requirement already satisfied: thinc==7.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval) (7.4.0)
+Requirement already satisfied: future in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from torch==1.6.0->qaeval->qafacteval) (0.18.3)
+Requirement already satisfied: packaging in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (23.1)
+Requirement already satisfied: filelock in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (3.0.12)
+Requirement already satisfied: regex!=2019.12.17 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (2023.8.8)
+Requirement already satisfied: sentencepiece!=0.1.92 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (0.1.99)
+Requirement already satisfied: tokenizers==0.8.1.rc1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (0.8.1rc1)
+Requirement already satisfied: sacremoses in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval) (0.0.53)
+Requirement already satisfied: tensorboardX>=1.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (2.6.2.2)
+Requirement already satisfied: pytest in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (7.4.0)
+Requirement already satisfied: jsonnet>=0.10.0; sys_platform != "win32" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (0.20.0)
+Requirement already satisfied: overrides==3.1.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (3.1.0)
+Requirement already satisfied: h5py in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (3.9.0)
+Requirement already satisfied: jsonpickle in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (3.0.2)
+Requirement already satisfied: nltk in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (3.8.1)
+Requirement already satisfied: boto3<2.0,>=1.14 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (1.28.35)
+Requirement already satisfied: scikit-learn in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (1.3.0)
+Requirement already satisfied: scipy in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval) (1.10.1)
+Requirement already satisfied: certifi>=2017.4.17 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests<3.0.0,>=2.13.0->spacy==2.2.4->qaeval->qafacteval) (2023.7.22)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests<3.0.0,>=2.13.0->spacy==2.2.4->qaeval->qafacteval) (3.2.0)
+Requirement already satisfied: idna<4,>=2.5 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests<3.0.0,>=2.13.0->spacy==2.2.4->qaeval->qafacteval) (3.4)
+Requirement already satisfied: joblib in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from sacremoses->transformers==3.0.2->qaeval->qafacteval) (1.3.2)
+Requirement already satisfied: six in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from sacremoses->transformers==3.0.2->qaeval->qafacteval) (1.16.0)
+Requirement already satisfied: protobuf>=3.20 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from tensorboardX>=1.2->allennlp==1.1.0->qaeval->qafacteval) (4.24.2)
+Requirement already satisfied: iniconfig in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval) (2.0.0)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval) (1.3.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8; python_version < "3.11" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval) (1.1.3)
+Requirement already satisfied: tomli>=1.0.0; python_version < "3.11" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval) (2.0.1)
+Requirement already satisfied: s3transfer<0.7.0,>=0.6.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval) (0.6.2)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval) (1.0.1)
+Requirement already satisfied: botocore<1.32.0,>=1.31.35 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval) (1.31.35)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from scikit-learn->allennlp==1.1.0->qaeval->qafacteval) (3.2.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from botocore<1.32.0,>=1.31.35->boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval) (2.8.2)
+Installing collected packages: qafacteval
+Successfully installed qafacteval-0.10
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ 
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ ls
+allennlp                              idna                                     plac_ext.py                      setuptools-44.0.0.virtualenv
+allennlp-1.1.0.dist-info              idna-3.4.dist-info                       plac.py                          six-1.16.0.dist-info
+bin                                   iniconfig                                plac_tk.py                       six.py
+blis                                  iniconfig-2.0.0.dist-info                pluggy                           sklearn
+blis-0.4.1.dist-info                  jmespath                                 pluggy-1.3.0.dist-info           spacy
+boto3                                 jmespath-1.0.1.dist-info                 preshed                          spacy-2.2.4.dist-info
+boto3-1.28.35.dist-info               joblib                                   preshed-3.0.8.dist-info          srsly
+botocore                              joblib-1.3.2.dist-info                   protobuf-4.24.2.dist-info        srsly-1.0.7.dist-info
+botocore-1.31.35.dist-info            jsonnet-0.20.0.dist-info                 __pycache__                      tensorboardX
+caffe2                                _jsonnet.cpython-38-x86_64-linux-gnu.so  py.py                            tensorboardX-2.6.2.2.dist-info
+catalogue                             jsonpickle                               _pytest                          thinc
+catalogue-1.0.2.dist-info             jsonpickle-3.0.2.dist-info               pytest                           thinc-7.4.0.dist-info
+certifi                               libfuturize                              pytest-7.4.0.dist-info           threadpoolctl-3.2.0.dist-info
+certifi-2023.7.22.dist-info           libpasteurize                            python_dateutil-2.8.2.dist-info  threadpoolctl.py
+charset_normalizer                    murmurhash                               qaeval                           tokenizers
+charset_normalizer-3.2.0.dist-info    murmurhash-1.0.9.dist-info               qaeval-0.1.0.dist-info           tokenizers-0.8.1rc1.dist-info
+click                                 nltk                                     qafacteval-0.10.dist-info        tomli
+click-7.1.2.dist-info                 nltk-3.8.1.dist-info                     regex                            tomli-2.0.1.dist-info
+cymem                                 numpy                                    regex-2023.8.8.dist-info         torch
+cymem-2.0.7.dist-info                 numpy-1.24.4.dist-info                   requests                         torch-1.6.0.dist-info
+dateutil                              numpy.libs                               requests-2.31.0.dist-info        tqdm
+easy_install.py                       overrides                                s3transfer                       tqdm-4.66.1.dist-info
+edlib-1.3.9.dist-info                 overrides-3.1.0.dist-info                s3transfer-0.6.2.dist-info       transformers
+edlib.cpython-38-x86_64-linux-gnu.so  packaging                                sacremoses                       transformers-3.0.2.dist-info
+exceptiongroup                        packaging-23.1.dist-info                 sacremoses-0.0.53.dist-info      urllib3
+exceptiongroup-1.1.3.dist-info        past                                     scikit_learn-1.3.0.dist-info     urllib3-2.0.4.dist-info
+filelock-3.0.12.dist-info             pip                                      scikit_learn.libs                _virtualenv.pth
+filelock.py                           pip-20.0.2.dist-info                     scipy                            _virtualenv.py
+future                                pip-20.0.2.virtualenv                    scipy-1.10.1.dist-info           wasabi
+future-0.18.3.dist-info               pkg_resources                            scipy.libs                       wasabi-0.10.1.dist-info
+google                                pkg_resources-0.0.0.dist-info            sentencepiece                    wheel
+h5py                                  pkg_resources-0.0.0.virtualenv           sentencepiece-0.1.99.dist-info   wheel-0.34.2.dist-info
+h5py-3.9.0.dist-info                  plac-1.1.3.dist-info                     setuptools                       wheel-0.34.2.virtualenv
+h5py.libs                             plac_core.py                             setuptools-44.0.0.dist-info
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8/site-packages$ cd ..
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib/python3.8$ cd ..
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env/lib$ cd ..
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/qafacteval_env$ cd ..
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ cd ..
+(qafacteval_env) mb5018@tuna:~$ cd long-doc-summ
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ ls
+booksumm-sample    gen_summaries.py                 myenv           qafacteval-test.py       snac-main                   summscreen-test
+booksumm-sample2   gpt4_summaries                   plan.txt        README.md                summaries.json              tms-summaries.json
+eval.ipynb         hello.py                         QAFactEval      sample-booksum.ipynb     summscreen_datacleaning.py
+fd-summaries.json  mb5018@branzino.cs.columbia.edu  qafacteval_env  sample-summscreen.ipynb  SummScreen_raw
+(qafacteval_env) mb5018@tuna:~/long-doc-summ$ cd QAFactEval
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/QAFactEval$ pip install -e .
+Obtaining file:///home/mb5018/long-doc-summ/QAFactEval
+Requirement already satisfied: qaeval in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qafacteval==0.10) (0.1.0)
+Requirement already satisfied: transformers==3.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (3.0.2)
+Requirement already satisfied: urllib3>=1.25.10 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (2.0.4)
+Requirement already satisfied: spacy==2.2.4 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (2.2.4)
+Requirement already satisfied: click==7.1.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (7.1.2)
+Requirement already satisfied: torch==1.6.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (1.6.0)
+Requirement already satisfied: allennlp==1.1.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (1.1.0)
+Requirement already satisfied: edlib in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from qaeval->qafacteval==0.10) (1.3.9)
+Requirement already satisfied: requests in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (2.31.0)
+Requirement already satisfied: tokenizers==0.8.1.rc1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (0.8.1rc1)
+Requirement already satisfied: sentencepiece!=0.1.92 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (0.1.99)
+Requirement already satisfied: packaging in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (23.1)
+Requirement already satisfied: sacremoses in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (0.0.53)
+Requirement already satisfied: filelock in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (3.0.12)
+Requirement already satisfied: numpy in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (1.24.4)
+Requirement already satisfied: tqdm>=4.27 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (4.66.1)
+Requirement already satisfied: regex!=2019.12.17 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from transformers==3.0.2->qaeval->qafacteval==0.10) (2023.8.8)
+Requirement already satisfied: wasabi<1.1.0,>=0.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (0.10.1)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (3.0.8)
+Requirement already satisfied: blis<0.5.0,>=0.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (0.4.1)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (1.0.9)
+Requirement already satisfied: setuptools in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (44.0.0)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (2.0.7)
+Requirement already satisfied: catalogue<1.1.0,>=0.0.7 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (1.0.2)
+Requirement already satisfied: srsly<1.1.0,>=1.0.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (1.0.7)
+Requirement already satisfied: plac<1.2.0,>=0.9.6 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (1.1.3)
+Requirement already satisfied: thinc==7.4.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from spacy==2.2.4->qaeval->qafacteval==0.10) (7.4.0)
+Requirement already satisfied: future in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from torch==1.6.0->qaeval->qafacteval==0.10) (0.18.3)
+Requirement already satisfied: scikit-learn in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (1.3.0)
+Requirement already satisfied: h5py in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (3.9.0)
+Requirement already satisfied: pytest in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (7.4.0)
+Requirement already satisfied: tensorboardX>=1.2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (2.6.2.2)
+Requirement already satisfied: jsonnet>=0.10.0; sys_platform != "win32" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (0.20.0)
+Requirement already satisfied: scipy in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (1.10.1)
+Requirement already satisfied: boto3<2.0,>=1.14 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (1.28.35)
+Requirement already satisfied: nltk in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (3.8.1)
+Requirement already satisfied: jsonpickle in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (3.0.2)
+Requirement already satisfied: overrides==3.1.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from allennlp==1.1.0->qaeval->qafacteval==0.10) (3.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests->transformers==3.0.2->qaeval->qafacteval==0.10) (2023.7.22)
+Requirement already satisfied: idna<4,>=2.5 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests->transformers==3.0.2->qaeval->qafacteval==0.10) (3.4)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from requests->transformers==3.0.2->qaeval->qafacteval==0.10) (3.2.0)
+Requirement already satisfied: joblib in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from sacremoses->transformers==3.0.2->qaeval->qafacteval==0.10) (1.3.2)
+Requirement already satisfied: six in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from sacremoses->transformers==3.0.2->qaeval->qafacteval==0.10) (1.16.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from scikit-learn->allennlp==1.1.0->qaeval->qafacteval==0.10) (3.2.0)
+Requirement already satisfied: tomli>=1.0.0; python_version < "3.11" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval==0.10) (2.0.1)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval==0.10) (1.3.0)
+Requirement already satisfied: iniconfig in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval==0.10) (2.0.0)
+Requirement already satisfied: exceptiongroup>=1.0.0rc8; python_version < "3.11" in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from pytest->allennlp==1.1.0->qaeval->qafacteval==0.10) (1.1.3)
+Requirement already satisfied: protobuf>=3.20 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from tensorboardX>=1.2->allennlp==1.1.0->qaeval->qafacteval==0.10) (4.24.2)
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval==0.10) (1.0.1)
+Requirement already satisfied: botocore<1.32.0,>=1.31.35 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval==0.10) (1.31.35)
+Requirement already satisfied: s3transfer<0.7.0,>=0.6.0 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval==0.10) (0.6.2)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /home/mb5018/long-doc-summ/qafacteval_env/lib/python3.8/site-packages (from botocore<1.32.0,>=1.31.35->boto3<2.0,>=1.14->allennlp==1.1.0->qaeval->qafacteval==0.10) (2.8.2)
+Installing collected packages: qafacteval
+  Attempting uninstall: qafacteval
+    Found existing installation: qafacteval 0.10
+    Uninstalling qafacteval-0.10:
+      Successfully uninstalled qafacteval-0.10
+  Running setup.py develop for qafacteval
+Successfully installed qafacteval
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/QAFactEval$ pip show qafacteval
+pyName: qafacteval
+Version: 0.10
+Summary: QAFactEval Summarization Factual Consistency Metric
+Home-page: https://github.com/salesforce/QAFactEval
+Author: Alexander R. Fabbri
+Author-email: afabbri@salesforce.com
+License: BSD
+Location: /home/mb5018/long-doc-summ/QAFactEval
+Requires: qaeval
+Required-by: 
+(qafacteval_env) mb5018@tuna:~/long-doc-summ/QAFactEval$ python
+Python 3.8.10 (default, May 26 2023, 14:05:08) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import qafacteval
+>>> 
