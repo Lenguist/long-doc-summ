@@ -4,7 +4,7 @@ This is a research project in long document summatization conducted in summer 20
 
 Tasks:
 - Prepare data
-  - Booksum ✅
+  - Booksum ✅ 100 books
   - SummScreen in progress
   - Real books! coming in future
 - Eval
