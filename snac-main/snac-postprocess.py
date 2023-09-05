@@ -47,7 +47,8 @@ def convert_to_html(text):
     return f'<html><body>{html_output}</body></html>'
 
 # Example text
-text = '''<extra_id_0> In his younger years, Hardy's father gave him advice that he has been turning over in his mind ever since.</s>
+text = '''
+<extra_id_0> In his younger years, Hardy's father gave him advice that he has been turning over in his mind ever since.</s>
 Predicted: false<extra_id_0> character Hardy</s>
 In his younger years, Hardy's father gave him advice that he has been turning over in his mind ever since.<extra_id_0> Whenever he feels like criticizing anyone, he should remember that all people in the world haven't had the advantages he has.</s>
 Predicted: true</s>
@@ -60,8 +61,9 @@ Predicted: true</s>'''
 
 # Generate HTML output
 html_output = convert_to_html(text)
-
+print(html_output)
 # Save HTML output to a file
-file_path = 'snac.html'
-with open(file_path, 'w') as f:
-    f.write(html_output)
+# file_path = 'snac.html'
+# with open(file_path, 'w') as f:
+#     f.write(html_output)
+
