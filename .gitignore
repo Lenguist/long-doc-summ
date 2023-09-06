@@ -9,8 +9,12 @@ summscreen/
 snac-main/t5-span
 snac-main/t5-nospan
 snac-main/snac-env
-QAFactEval/
 SummScreen_raw/
 .vs-code/
 qafacteval_env/
 myenv/
+QAFactEval/qafacteval
+QAFactEval/qafacteval.egg-info
+QAFactEval/qaeval
+QAFactEval/models
+QAFactEval/__pycache__

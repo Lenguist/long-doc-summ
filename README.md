@@ -2,6 +2,10 @@
 
 This is a research project in long document summatization conducted in summer 2023
 
+For SNAC evaluation:
+
+snac-main folder contains all the scripts. Snac preprocess takes in txt summary and generates tsv file, then snac_evaluate gives snac output, then snac-postprocess gets visualization from the snac output
+
 Tasks:
 - Prepare data
   - Booksum ✅ 100 books

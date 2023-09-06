@@ -1,0 +1,64 @@
+[
+    [
+        {
+            "qa-eval": {
+                "em": 0.0,
+                "is_answered": 1.0,
+                "lerc_quip": 2.8713929653167725,
+                "f1": 0.0
+            }
+        },
+        [
+            [
+                {
+                    "question": {
+                        "question_id": "dc50bcdddb09fd6e2772d349a1e8dd58",
+                        "question": "What is this?",
+                        "answer": "a summary",
+                        "sent_start": 0,
+                        "sent_end": 18,
+                        "answer_start": 8,
+                        "answer_end": 17
+                    },
+                    "prediction": {
+                        "prediction_id": "cfcd208495d565ef66e7dff9f98764da",
+                        "prediction": "a source document",
+                        "probability": 0.7351709925859897,
+                        "null_probability": 2.7699469935707522e-05,
+                        "start": 8,
+                        "end": 25,
+                        "em": 0,
+                        "is_answered": 1.0,
+                        "lerc_quip": 2.8713929653167725,
+                        "f1": 0
+                    }
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "question_id": "dc50bcdddb09fd6e2772d349a1e8dd58",
+                    "question": "What is this?",
+                    "answer": "a summary",
+                    "sent_start": 0,
+                    "sent_end": 18,
+                    "answer_start": 8,
+                    "answer_end": 17
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "prediction_id": "cfcd208495d565ef66e7dff9f98764da",
+                    "prediction": "a summary",
+                    "probability": 0.5786108663883172,
+                    "null_probability": 0.0019125255452775267,
+                    "start": 8,
+                    "end": 17
+                }
+            ]
+        ]
+    ]
+]
