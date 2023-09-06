@@ -16,25 +16,39 @@ def convert_to_html(text):
     # Splitting the input text by lines
     lines = text.strip().split("\n")
 
-    for line in lines:
-        if "Predicted:" in line:
-            predicted_splits = line.split("Predicted: ")
-            if len(predicted_splits) > 1:
-                extra_id_splits = predicted_splits[-1].split("<extra_id_0>")
-                if len(extra_id_splits) > 1:
-                    end_tag_splits = extra_id_splits[1].split("</s>")
-                    if len(end_tag_splits) > 0:
-                        tag_line = end_tag_splits[0]
-                        tags.append(tag_line)
-        else:
-            sentence_line = line.split("<extra_id_0>")[0].strip()
-            current_sentence += " " + sentence_line.strip()
-            sentences.append(current_sentence.strip())
-
+    old_text_len = 0
+    sentences = []
     html_output = ""
-    for sentence, tag in zip(sentences[1:], tags):
-        print(sentence)
-        print(tag)
+    for i, line in enumerate(lines):
+        if i % 2 == 0: #sentence
+            ix = line.index("<extra_id_0>") + len("<extra_id_0>") + 1
+            #print(ix)
+            #print(line[ix:-4])
+            sentences.append(line[ix:-4])
+        else:
+            var = len("Predicted: ")
+            flag = line[var:]
+            if flag.startswith("true"):
+                html_output += sentences[-1] + " "
+            else:
+                html_output += sentences[-1] + " "
+        # if "Predicted:" in line:
+        #     predicted_splits = line.split("Predicted: ")
+        #     if len(predicted_splits) > 1:
+        #         extra_id_splits = predicted_splits[-1].split("<extra_id_0>")
+        #         if len(extra_id_splits) > 1:
+        #             end_tag_splits = extra_id_splits[1].split("</s>")
+        #             if len(end_tag_splits) > 0:
+        #                 tag_line = end_tag_splits[0]
+        #                 tags.append(tag_line)
+        # else:
+        #     sentence_line = line.split("<extra_id_0>")[0].strip()
+        #     current_sentence += " " + sentence_line.strip()
+        #     sentences.append(current_sentence.strip())
+
+    #for sentence, tag in zip(sentences[1:], tags):
+        #print(sentence)
+        #print(tag)
         # if tag == 'scene':
         #     html_output += f'<span style="{styles[tag]}">{sentence}</span> '
         # else:
@@ -46,7 +60,7 @@ def convert_to_html(text):
         #         else:
         #             html_output += f'{word} '
         # html_output += '. '
-
+    print(html_output)
     return f'<html><body>{html_output}</body></html>'
 
 # Example text
@@ -64,7 +78,7 @@ Predicted: true</s>'''
 
 # Generate HTML output
 html_output = convert_to_html(text)
-print(html_output)
+#print(html_output)
 # Save HTML output to a file
 # file_path = 'snac.html'
 # with open(file_path, 'w') as f:
