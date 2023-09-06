@@ -31,18 +31,21 @@ def convert_to_html(text):
             current_sentence += " " + sentence_line.strip()
             sentences.append(current_sentence.strip())
 
+    html_output = ""
     for sentence, tag in zip(sentences[1:], tags):
-        if tag == 'scene':
-            html_output += f'<span style="{styles[tag]}">{sentence}</span> '
-        else:
-            words = sentence.split(" ")
-            tagged_words = tag.split(" ")
-            for word in words:
-                if word in tagged_words:
-                    html_output += f'<span style="{styles[tag]}">{word}</span> '
-                else:
-                    html_output += f'{word} '
-        html_output += '. '
+        print(sentence)
+        print(tag)
+        # if tag == 'scene':
+        #     html_output += f'<span style="{styles[tag]}">{sentence}</span> '
+        # else:
+        #     words = sentence.split(" ")
+        #     tagged_words = tag.split(" ")
+        #     for word in words:
+        #         if word in tagged_words:
+        #             html_output += f'<span style="{styles[tag]}">{word}</span> '
+        #         else:
+        #             html_output += f'{word} '
+        # html_output += '. '
 
     return f'<html><body>{html_output}</body></html>'
 
