@@ -3,7 +3,7 @@ kwargs = {"cuda_device": 0, "use_lerc_quip": True, \
         "verbose": True, "generation_batch_size": 32, \
         "answering_batch_size": 32, "lerc_batch_size": 8}
 
-model_folder = "" # path to models downloaded with download_models.sh
+model_folder = "/home/mb5018/long-doc-summ/QAFactEval/models"
 metric = QAFactEval(
     lerc_quip_path=f"{model_folder}/quip-512-mocha",
     generation_model_path=f"{model_folder}/generation/model.tar.gz",
