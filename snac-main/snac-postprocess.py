@@ -22,8 +22,6 @@ def convert_to_html(text):
     for i, line in enumerate(lines):
         if i % 2 == 0: #sentence
             ix = line.index("<extra_id_0>") + len("<extra_id_0>") + 1
-            #print(ix)
-            #print(line[ix:-4])
             sentences.append(line[ix:-4])
         else:
             var = len("Predicted: ")
@@ -31,36 +29,15 @@ def convert_to_html(text):
             if flag.startswith("true"):
                 html_output += sentences[-1] + " "
             else:
-                html_output += sentences[-1] + " "
-        # if "Predicted:" in line:
-        #     predicted_splits = line.split("Predicted: ")
-        #     if len(predicted_splits) > 1:
-        #         extra_id_splits = predicted_splits[-1].split("<extra_id_0>")
-        #         if len(extra_id_splits) > 1:
-        #             end_tag_splits = extra_id_splits[1].split("</s>")
-        #             if len(end_tag_splits) > 0:
-        #                 tag_line = end_tag_splits[0]
-        #                 tags.append(tag_line)
-        # else:
-        #     sentence_line = line.split("<extra_id_0>")[0].strip()
-        #     current_sentence += " " + sentence_line.strip()
-        #     sentences.append(current_sentence.strip())
-
-    #for sentence, tag in zip(sentences[1:], tags):
-        #print(sentence)
-        #print(tag)
-        # if tag == 'scene':
-        #     html_output += f'<span style="{styles[tag]}">{sentence}</span> '
-        # else:
-        #     words = sentence.split(" ")
-        #     tagged_words = tag.split(" ")
-        #     for word in words:
-        #         if word in tagged_words:
-        #             html_output += f'<span style="{styles[tag]}">{word}</span> '
-        #         else:
-        #             html_output += f'{word} '
-        # html_output += '. '
-    print(html_output)
+                var = len("false<extra_id_0> ")
+                elements = flag[var:-4].split(" ")
+                error_type = elements[0]
+                if len(elements) == 1: #only error, highlight the whole sentence
+                    html_output += f'<span style="{styles[error_type]}">{sentences[-1]}</span> '
+                else:
+                    for element in elements[1:]:
+                        sentences[-1] = sentences[-1].replace(element, f'<span style="{styles[error_type]}">{element}</span>')
+                    html_output += sentences[-1] + " "
     return f'<html><body>{html_output}</body></html>'
 
 # Example text
@@ -78,9 +55,9 @@ Predicted: true</s>'''
 
 # Generate HTML output
 html_output = convert_to_html(text)
-#print(html_output)
+print(html_output)
 # Save HTML output to a file
-# file_path = 'snac.html'
-# with open(file_path, 'w') as f:
-#     f.write(html_output)
+file_path = 'snac.html'
+with open(file_path, 'w') as f:
+    f.write(html_output)
 
